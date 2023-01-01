@@ -2,4 +2,3 @@
 .vscode
 *.db
 /__pycache__
-sql_functions.py
