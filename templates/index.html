@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Navigator
+{% endblock title %}
+
+{% block body %}
+
+    <h1 style="font-family:'Ubuntu', sans-serif; font-size: 38px;" 
+    class="text-decoration-underline mx-5 my-4">My Todo App</h1>
+
+
+    <div class="grid gap-4 grid-cols-3 grid-rows-3">
+        <div class="flex justify-center">
+            <div class="block p-6 rounded-lg shadow-lg bg-dark bg-gradient max-w-sm">
+              <h5 class="text-gray-900 text-xl leading-tight font-medium mb-2">Create todo</h5>
+              <p class="text-gray-900 text-base mb-4">
+                A todo form 
+                which will Create a doc in <b>mongo's</b> <i>collection</i>.
+              </p>
+              <a href="/create" class="inline-block px-6 py-2 border-2 border-blue-600 text-blue-600 font-medium text-xs leading-tight uppercase rounded-full hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out">Create</a>
+            </div>
+          </div>
+        <div class="flex justify-center">
+            <div class="block p-6 rounded-lg shadow-lg bg-dark bg-gradient max-w-sm">
+              <h5 class="text-gray-900 text-xl leading-tight font-medium mb-2">Show all todos</h5>
+              <p class="text-gray-900 text-base mb-4">
+                Show the data present inside the <b>mongoDB</b> in the form
+                of table or json.
+              </p>
+              <a href="/show" class="inline-block px-6 py-2 border-2 border-blue-600 text-blue-600 font-medium text-xs leading-tight uppercase rounded-full hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out">Show</a>
+            </div>
+          </div>
+    </div>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+
+
+{% endblock body %}

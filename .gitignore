@@ -1,0 +1,4 @@
+*.hintrc
+.vscode
+*.db
+/__pycache__

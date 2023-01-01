@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Create todo
+{% endblock title %}
+
+{% block body %}
+
+<h1 style="font-family:'Ubuntu', sans-serif; font-size: 38px;" class="text-decoration-underline mx-5 mt-4">
+    Create a Todo</h1>
+
+<div class="container my-4 py-4 bg-dark bg-opacity-10 border border-3
+            border-secondary rounded-start rounded-end">
+    <form action="post" method="post">
+        <div class="mb-3">
+            <label for="todo_title" class="form-label">Todo Title</label>
+            <input type="text" class="form-control" id="todo_title" name="todo_title" aria-describedby="emailHelp"
+                placeholder="Enter the todo title in 3-4 words">
+        </div>
+        <div class="mb-3">
+            <label for="todo_desc" class="form-label">Todo Description</label>
+            <input type="text" class="form-control" id="todo_desc" name="todo_desc"
+                placeholder="Enter todo Description in 10-100 words">
+        </div>
+        <button type="submit" class="btn btn-outline-success px-4 mt-2">Submit</button>
+    </form>
+</div>
+
+
+{% endblock body %}
