@@ -1,5 +1,5 @@
-from flask import Flask, render_template, request, url_for, redirect, jsonify
-from flask_pymongo import PyMongo
+from flask import Flask, render_template, request, url_for, redirect
+# from flask_pymongo import PyMongo
 from datetime import datetime
 import sqlite3
 from sql_commander import Commander
@@ -21,12 +21,12 @@ except Exception as err:
     print("Sqllite connection failed Error Occured:", str(err))
 
 
-# Flask -> MongoDB configuration
-app.config["MONGO_URI"] = "mongodb://localhost:27017/flaskdb"
-mongo = PyMongo(app)
-collection = mongo.db.collection
+# Flask -> MongoDB configuration :--- REMOVED FEATURE
+# app.config["MONGO_URI"] = "mongodb://localhost:27017/flaskdb"
+# mongo = PyMongo(app)
+# collection = mongo.db.collection
+# cursor = list(collection.find({}, {"_id": 0}))
 
-cursor = list(collection.find({}, {"_id": 0}))
 
 
 @app.route("/")
@@ -48,13 +48,6 @@ def save_form():
             commander.insertData(
                 data=(todo_title, todo_desc, datetime.now()),
             )
-            collection.insert_one(
-                {
-                    "Title": todo_title,
-                    "Description": todo_desc,
-                    "Created": datetime.now(),
-                }
-            )
         except Exception as e:
             print("ERROR : ", str(e))
     # elif request.method == "GET":
@@ -75,8 +68,7 @@ def show_table():
     }
     print(json.dumps(json_format, sort_keys=True, indent=4))
     print("\nType = ", type(allData))
-    all_todos = list(collection.find({}, {"_id": 0}))
-    return render_template("show.html", allData=allData, todos=all_todos)
+    return render_template("show.html", allData=allData)
 
 
 if __name__ == "__main__":
