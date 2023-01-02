@@ -67,7 +67,7 @@ OS X, Linux & Windows:
 ```sh
 git clone https://github.com/a78738825/TodoApp
 
-pip install flask
+pip install flask, sqlite3
 ```
 
 
@@ -82,7 +82,7 @@ _For more examples and usage, please refer to the [Wiki][wiki]._
 
 ## Development setup
 
-### Creating a Virtual Enviroment (optional but recommended)
+### Creating a Virtual Enviroment (Optional)
 
 ***OS X & Linux***:
 
