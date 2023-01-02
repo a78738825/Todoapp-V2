@@ -2,8 +2,8 @@ from flask import Flask, render_template, request, url_for, redirect, jsonify
 from flask_pymongo import PyMongo
 from datetime import datetime
 import sqlite3
-# import sql_functions
 from sql_commander import Commander
+import json
 
 
 app = Flask(__name__)
@@ -67,8 +67,16 @@ def save_form():
 
 @app.route("/show")
 def show_table():
+    allData = commander.readData()
+    json_format = {
+        "Title": allData[0],
+        "Description": allData[1],
+        "Created": allData[2],
+    }
+    print(json.dumps(json_format, sort_keys=True, indent=4))
+    print("\nType = ", type(allData))
     all_todos = list(collection.find({}, {"_id": 0}))
-    return render_template("show.html", todos=all_todos)
+    return render_template("show.html", allData=allData, todos=all_todos)
 
 
 if __name__ == "__main__":
