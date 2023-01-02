@@ -6,6 +6,30 @@
 {% block body %}
     <h1 style="font-family:'Ubuntu', sans-serif; font-size: 38px;" class="text-decoration-underline mx-5 mt-4">My Todos</h1>
 
+    <!-- <div class="container my-5 bg-dark text-white border border-3
+     border-white rounded-start rounded-end">
+        <table class="table text-success">
+            <thead>
+                <tr>
+                    <th scope="col">SNo</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Created on</th>
+                </tr>
+            </thead>
+            <tbody style="border-top-color: rgba(255, 255, 255, 0.971);" class="table-group-divider">
+                {% for t in todos %}
+                <tr>
+                    <th scope="row">{{loop.index}}</th>
+                    <td>{{t.Title}}</td>
+                    <td>{{t.Description}}</td>
+                    <td>{{t.Created}}</td>
+                </tr> 
+                {% endfor %}
+            </tbody>
+        </table>
+    </div> -->
+
     <div class="container my-5 bg-dark text-white border border-3
      border-white rounded-start rounded-end">
         <table class="table text-success">
@@ -20,12 +44,12 @@
                 </tr>
             </thead>
             <tbody style="border-top-color: rgba(255, 255, 255, 0.971);" class="table-group-divider">
-                {% for t in todos %}
+                {% for i in allData %}
                 <tr>
                     <th scope="row">{{loop.index}}</th>
-                    <td>{{t.Title}}</td>
-                    <td>{{t.Description}}</td>
-                    <td>{{t.Created}}</td>
+                    <td>{{i[0]}}</td>
+                    <td>{{i[1]}}</td>
+                    <td>{{i[2]}}</td>
                 </tr> 
                 {% endfor %}
             </tbody>
